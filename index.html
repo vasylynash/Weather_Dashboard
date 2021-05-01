@@ -11,6 +11,7 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -25,11 +26,12 @@
             <div class="col-sm-4">
                 <h4 class="pt-1"><strong>Search for a City:</strong></h4>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Enter a city" aria-label="Enter a city"
-                        aria-describedby="search-button">
+                    <input type="text" class="form-control" id="city-search" placeholder="Enter a city"
+                        aria-label="Enter a city" aria-describedby="search-button">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="search-button"><i
-                                class="fa fa-search"></i></button>
+                        <button class="btn btn-outline-primary" data-container="body" data-toggle="popover"
+                            data-placement="top" data-content="Please enter a city name" type="button"
+                            id="search-button"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
                 <ul class="list-group">
@@ -40,45 +42,50 @@
                 <div class="row ml-2 border border-light rounded">
                     <div class="col-sm-12" id="current">
                         <h3 class="city-name mb-1 mt-2 bolder" id="city"></h3>
-                        <p>Temperature:<span class="current" id="temperature"></span></p>
-                        <p>Humidity:<span class="current" id="humidity"></span></p>
-                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-                        <p>UV index:<span class="current bg-danger rounded px-2 ml-1 text-white" id="uv-index"></span>
+                        <p>Temperature:<span class="px-2" id="temperature"></span></p>
+                        <p>Humidity:<span class="px-2" id="humidity"></span></p>
+                        <p>Wind Speed:<span class="px-2" id="wind-speed"></span></p>
+                        <p>UV index:<span class=" rounded px-2 ml-1" id="uv-index"></span>
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-12" id="forecast">
                     <h3>Five Day Forecast</h3>
-                    <div class="row text-light">
-                        <div class="col-sm-2 bg-info forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                    <div class="row text-light justify-content-between">
+                        <div class="forecast col-sm-2 text-white ml-2 mb-3 p-2 mt-2 rounded">
                             <p id="date0"></p>
                             <p id="img0"></p>
                             <p>Temp:<span id="temp0"></span></p>
                             <p>Humidity:<span id="humidity0"></span></p>
+                            <p>Wind Speed:<span id="speed0"></span></p>
                         </div>
-                        <div class="col-sm-2 bg-info forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <div class="forecast col-sm-2 text-white ml-2 mb-3 p-2 mt-2 rounded">
                             <p id="date1"></p>
                             <p id="img1"></p>
                             <p>Temp:<span id="temp1"></span></p>
                             <p>Humidity:<span id="humidity1"></span></p>
+                            <p>Wind Speed:<span id="speed1"></span></p>
                         </div>
-                        <div class="col-sm-2 bg-info forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <div class="forecast col-sm-2 text-white ml-2 mb-3 p-2 mt-2 rounded">
                             <p id="date2"></p>
                             <p id="img2"></p>
                             <p>Temp:<span id="temp2"></span></p>
                             <p>Humidity:<span id="humidity2"></span></p>
+                            <p>Wind Speed:<span id="speed2"></span></p>
                         </div>
-                        <div class="col-sm-2 bg-info forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <div class="forecast col-sm-2 text-white ml-2 mb-3 p-2 mt-2 rounded">
                             <p id="date3"></p>
                             <p id="img3"></p>
                             <p>Temp:<span id="temp3"></span></p>
                             <p>Humidity:<span id="humidity3"></span></p>
+                            <p>Wind Speed:<span id="speed3"></span></p>
                         </div>
-                        <div class="col-sm-2 bg-info forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                        <div class="forecast col-sm-2 text-white ml-2 mb-3 p-2 mt-2 rounded">
                             <p id="date4"></p>
                             <p id="img4"></p>
                             <p>Temp:<span id="temp4"></span></p>
                             <p>Humidity:<span id="humidity4"></span></p>
+                            <p>Wind Speed:<span id="speed4"></span></p>
                         </div>
                     </div>
                 </div>

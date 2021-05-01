@@ -3,7 +3,7 @@
 ## The goal:
 To build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
-Enter the name of the city in the search field and click the search button. The current weather and forecast will apear to the right.
+Enter the name of the city in the search field and click the search button. The current weather and forecast will appear to the right.
 
 The name of the city is added to the list below the search field. To see the weather and forecast for the city from the history, click the name of the city in the list.
 

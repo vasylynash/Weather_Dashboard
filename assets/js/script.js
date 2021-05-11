@@ -165,6 +165,7 @@ function createForecastPromise(data) {
 function renderWeather(data) {
     var date = moment().format("L");
     var iconId = data.weather[0].icon;
+    console.log(data)
     var iconUrl = `http://openweathermap.org/img/wn/${iconId}@2x.png`
     selectedCity.html(data.name + " (" + date + ") " + `<img src=${iconUrl} alt="Weather icon">`);
     temperature.text(data.main.temp + " ºF");

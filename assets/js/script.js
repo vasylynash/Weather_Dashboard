@@ -45,23 +45,88 @@ function renderHistory() {
 function getWeather(city) {
     const parsedResponsePromise = createWeatherPromise(city)
         .then(checkResponse)
-        .then(parseResponseJson);
+        .then(parseResponseJson)
+        .catch(function (errorMessage) {
+            if (typeof errorMessage !== "string") {
+                errorMessage = "Can't connect to server";
+            }
+            $(".col-sm-8").empty();
+            var error = $(`<div class="ui placeholder segment">
+                            <div class="ui icon header">
+                                <i class="search icon"></i>
+                                ${errorMessage}
+                            </div>
+                        </div>`);
+            $(".col-sm-8").append(error);
+        });
 
     parsedResponsePromise
-        .then(renderWeather);
+        .then(renderWeather)
+        .catch(function (errorMessage) {
+            if (typeof errorMessage !== "string") {
+                errorMessage = "Can't connect to server";
+            }
+            $(".col-sm-8").empty();
+            var error = $(`<div class="ui placeholder segment">
+                            <div class="ui icon header">
+                                <i class="search icon"></i>
+                                ${errorMessage}
+                            </div>
+                        </div>`);
+            $(".col-sm-8").append(error);
+        });
 
     parsedResponsePromise
-        .then(updateHistory);
+        .then(updateHistory)
+        .catch(function (errorMessage) {
+            if (typeof errorMessage !== "string") {
+                errorMessage = "Can't connect to server";
+            }
+            $(".col-sm-8").empty();
+            var error = $(`<div class="ui placeholder segment">
+                            <div class="ui icon header">
+                                <i class="search icon"></i>
+                                ${errorMessage}
+                            </div>
+                        </div>`);
+            $(".col-sm-8").append(error);
+        });
 
     parsedResponsePromise
         .then(createForecastPromise)
         .then(parseResponseJson)
-        .then(renderForecast);
+        .then(renderForecast)
+        .catch(function (errorMessage) {
+            if (typeof errorMessage !== "string") {
+                errorMessage = "Can't connect to server";
+            }
+            $(".col-sm-8").empty();
+            var error = $(`<div class="ui placeholder segment">
+                            <div class="ui icon header">
+                                <i class="search icon"></i>
+                                ${errorMessage}
+                            </div>
+                        </div>`);
+            $(".col-sm-8").append(error);
+        });
 
     parsedResponsePromise
         .then(createUVIndexPromise)
         .then(parseResponseJson)
-        .then(renderUVIndex);
+        .then(renderUVIndex)
+        .catch(function (errorMessage) {
+            if (typeof errorMessage !== "string") {
+                errorMessage = "Can't connect to server";
+            }
+            $(".col-sm-8").empty();
+            var error = $(`<div class="ui placeholder segment">
+                            <div class="ui icon header">
+                                <i class="search icon"></i>
+                                ${errorMessage}
+                            </div>
+                        </div>`);
+            $(".col-sm-8").append(error);
+        });
 }
 
 function checkResponse(response) {
@@ -74,6 +139,9 @@ function checkResponse(response) {
 }
 
 function parseResponseJson(response) {
+    if (!response.ok) {
+        throw "Can't retrieve data";
+    }
     return response.json();
 }
 

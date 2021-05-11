@@ -7,6 +7,7 @@ var humidity = $("#humidity");
 var wind = $("#wind-speed");
 var uvIndex = $("#uv-index");
 var list = $(".list-group");
+var additionalInfo = $("#info");
 
 const API_KEY = "5e39050a0422e1482db019790198600d";
 

@@ -47,11 +47,12 @@
                         <p>Wind Speed:<span class="px-2" id="wind-speed"></span></p>
                         <p>UV index:<span class=" rounded px-2 ml-1" id="uv-index"></span>
                         </p>
-                        <button type="button" class="btn btn-info">More info</button>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#more-info">More
+                            info</button>
                     </div>
                 </div>
                 <!-- modal -->
-                <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal" tabindex="-1" role="dialog" id="more-info">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -61,7 +62,6 @@
                                 <p>Sunset:<span class="px-2" id="sunset"></span>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Save changes</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>

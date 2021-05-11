@@ -8,6 +8,9 @@ var wind = $("#wind-speed");
 var uvIndex = $("#uv-index");
 var list = $(".list-group");
 var additionalInfo = $("#info");
+var pressure = $("#pressure");
+var sunrise = $("#sunrise");
+var sunset = $("#sunset");
 
 const API_KEY = "5e39050a0422e1482db019790198600d";
 
@@ -172,6 +175,7 @@ function renderWeather(data) {
     temperature.text(data.main.temp + " ºF");
     humidity.text(data.main.humidity + "%");
     wind.text(data.wind.speed + " MPH");
+
 }
 
 function renderForecast(data) {

@@ -29,3 +29,7 @@ span {
 li:hover {
     background-color: rgb(180, 194, 207);
 }
+
+#info {
+    font-style: italic;
+}

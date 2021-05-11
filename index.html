@@ -50,6 +50,24 @@
                         <button type="button" class="btn btn-info">More info</button>
                     </div>
                 </div>
+                <!-- modal -->
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p>Humidity:<span class="px-2" id="humidity"></span></p>
+                                <p>Pressure:<span class="px-2" id="pressure"></span></p>
+                                <p>Sunrise:<span class="px-2" id="sunrise"></span></p>
+                                <p>Sunset:<span class="px-2" id="sunset"></span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of modal -->
                 <div class="col-sm-12" id="forecast">
                     <h3>Five Day Forecast</h3>
                     <div class="row text-light justify-content-between">

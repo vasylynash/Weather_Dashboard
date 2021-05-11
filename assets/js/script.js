@@ -175,7 +175,9 @@ function renderWeather(data) {
     temperature.text(data.main.temp + " ºF");
     humidity.text(data.main.humidity + "%");
     wind.text(data.wind.speed + " MPH");
-
+    pressure.text(data.main.pressure);
+    sunrise.text(moment.unix(data.sys.sunrise).format("LT"));
+    sunset.text(moment.unix(data.sys.sunset).format("LT"));
 }
 
 function renderForecast(data) {

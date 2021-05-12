@@ -6,7 +6,8 @@ To build a weather dashboard that will run in the browser and feature dynamicall
 ## Technologies: 
 [Bootstrap](https://getbootstrap.com/), JavaScript, jQuery, [Moment.js](https://momentjs.com/).
 
-## API: [Current Weather Data](https://openweathermap.org/current), [5 day weather forecast](https://openweathermap.org/forecast5).
+## API: 
+[Current Weather Data](https://openweathermap.org/current), [5 day weather forecast](https://openweathermap.org/forecast5).
 
 Enter the name of the city in the search field and click the search button. The current weather and forecast will appear to the right. To see more info, click the **More Info** button.
 

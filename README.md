@@ -13,3 +13,4 @@ If you enter an invalid city name, the search field border will turn red.
 [Deployed web app](https://vasylynash.github.io/Weather_Dashboard/)
 
 ![Landing page](assets/images/screenshot.png)
+![Modal](assets/images/screenshot1.png)

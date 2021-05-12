@@ -6,6 +6,7 @@ var temperature = $("#temperature");
 var humidity = $("#humidity");
 var wind = $("#wind-speed");
 var uvIndex = $("#uv-index");
+var clearHistoryButton = $("#clear-history");
 var list = $(".list-group");
 var additionalInfo = $("#info");
 var pressure = $("#pressure");
@@ -37,7 +38,7 @@ function saveToLocalStorage(city) {
 function renderHistory() {
     var array = JSON.parse(localStorage.getItem("cities") || "[]");
     list.empty();
-    list.append(`<button type="button" class="btn btn-primary" id="clear">Clear History</button>`)
+    //list.append(`<button type="button" class="btn btn-primary" id="clear">Clear History</button>`)
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
         var listEl = $("<li>" + element + "</li>");
@@ -230,4 +231,9 @@ $(window).on("load", renderHistory);
 list.on("click", ".list-group-item", function () {
     var cityName = $(this).attr("data-value");
     getWeather(cityName);
+})
+
+clearHistoryButton.on("click", function () {
+    localStorage.clear();
+    renderHistory();
 })

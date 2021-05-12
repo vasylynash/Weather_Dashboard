@@ -38,7 +38,6 @@ function saveToLocalStorage(city) {
 function renderHistory() {
     var array = JSON.parse(localStorage.getItem("cities") || "[]");
     list.empty();
-    //list.append(`<button type="button" class="btn btn-primary" id="clear">Clear History</button>`)
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
         var listEl = $("<li>" + element + "</li>");
